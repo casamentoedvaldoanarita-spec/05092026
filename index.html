@@ -42,11 +42,10 @@ body::before{
   to{background-position:150px 150px}
 }
 
-/* TELA INICIAL */
 .abertura{
   position:fixed;
   inset:0;
-  background:#ffffff;
+  background:linear-gradient(180deg,#ffffff,#f9f6ef,#eef5f1);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -65,40 +64,51 @@ body::before{
   min-height:640px;
   background:linear-gradient(180deg,#ffffff,#f9f6ef);
   border-radius:28px;
-  padding:28px 20px;
+  padding:30px 20px;
   text-align:center;
   cursor:pointer;
   box-shadow:0 25px 70px rgba(0,0,0,.25);
-  border:1px solid rgba(212,175,55,.35);
+  border:1px solid rgba(212,175,55,.45);
   animation:entradaEnvelope 1.2s ease;
 }
 
-.flores-topo,
-.flores-baixo{
-  font-size:34px;
-  margin-bottom:10px;
+.ornamento{
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--gold-dark);
+  margin-bottom:16px;
 }
 
 .nome-convite{
   font-family:'Alex Brush',cursive;
-  font-size:52px;
+  font-size:54px;
   font-weight:400;
   color:var(--gold);
   margin-bottom:4px;
 }
 
+.texto-classico{
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  color:var(--green);
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
 .data-convite{
   font-family:'Cinzel',serif;
   font-size:14px;
-  color:var(--green);
-  margin-bottom:28px;
+  color:var(--gold-dark);
+  margin-bottom:30px;
+  font-weight:700;
 }
 
 .envelope-verde{
   position:relative;
   width:270px;
   height:165px;
-  margin:0 auto 20px;
+  margin:0 auto 24px;
   background:linear-gradient(135deg,#1f4d3a,#2f6b52);
   border-radius:6px;
   box-shadow:0 14px 30px rgba(31,77,58,.35);
@@ -140,30 +150,31 @@ body::before{
 .selo-verde{
   position:absolute;
   left:50%;
-  top:68px;
+  top:58px;
   transform:translateX(-50%);
-  width:58px;
-  height:58px;
-  background:#d4af37;
+  width:78px;
+  height:78px;
+  background:#ffffff;
+  border:3px solid var(--gold);
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 5px 12px rgba(0,0,0,.25);
+  box-shadow:0 5px 14px rgba(0,0,0,.28);
   animation:pulsarSelo 1.8s infinite;
   z-index:5;
 }
 
 .selo-verde img{
-  width:48px;
-  height:48px;
+  width:68px;
+  height:68px;
   object-fit:contain;
   border-radius:50%;
 }
 
 .texto-abrir{
   font-family:'Alex Brush',cursive;
-  font-size:28px;
+  font-size:29px;
   color:var(--gold-dark);
   margin:12px 0 20px;
 }
@@ -191,10 +202,9 @@ body::before{
 
 @keyframes pulsarSelo{
   0%,100%{transform:translateX(-50%) scale(1)}
-  50%{transform:translateX(-50%) scale(1.1)}
+  50%{transform:translateX(-50%) scale(1.08)}
 }
 
-/* CONVITE */
 .hero{
   min-height:100vh;
   display:flex;
@@ -396,19 +406,21 @@ footer .assinatura{
 <div class="abertura" id="abertura">
   <div class="tela-convite" onclick="abrirConvite()">
 
-    <div class="flores-topo">🌹🌸🌿</div>
+    <p class="ornamento">CONVITE ESPECIAL</p>
 
     <h1 class="nome-convite">Edvaldo & Ana</h1>
+
+    <p class="texto-classico">Têm a honra de convidar você</p>
+
     <p class="data-convite">05 de Setembro de 2026 • 17h</p>
 
     <div class="envelope-verde">
       <div class="linha-envelope"></div>
+
       <div class="selo-verde">
-        <img src="ed.png" alt="Selo">
+        <img src="ea1.png" alt="Selo do convite">
       </div>
     </div>
-
-    <div class="flores-baixo">🌿🌸🌹</div>
 
     <p class="texto-abrir">Toque no envelope para abrir</p>
 
