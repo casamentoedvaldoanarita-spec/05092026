@@ -59,12 +59,11 @@ body::before{
 }
 
 .tela-convite{
-  width:92%;
-  max-width:390px;
-  min-height:640px;
+  width:min(95vw, 560px);
+  min-height:720px;
   background:linear-gradient(180deg,#ffffff,#f9f6ef);
-  border-radius:28px;
-  padding:30px 20px;
+  border-radius:30px;
+  padding:40px 25px;
   text-align:center;
   cursor:pointer;
   box-shadow:0 25px 70px rgba(0,0,0,.25);
@@ -82,7 +81,7 @@ body::before{
 
 .nome-convite{
   font-family:'Alex Brush',cursive;
-  font-size:54px;
+  font-size:58px;
   font-weight:400;
   color:var(--gold);
   margin-bottom:4px;
@@ -98,20 +97,24 @@ body::before{
 
 .data-convite{
   font-family:'Cinzel',serif;
-  font-size:14px;
+  font-size:15px;
   color:var(--gold-dark);
-  margin-bottom:30px;
+  margin-bottom:35px;
   font-weight:700;
 }
 
 .envelope-verde{
   position:relative;
-  width:270px;
-  height:165px;
-  margin:0 auto 24px;
+  width:min(90vw, 500px);
+  height:min(55vw, 300px);
+  min-width:280px;
+  min-height:180px;
+  max-width:500px;
+  max-height:300px;
+  margin:0 auto 30px;
   background:linear-gradient(135deg,#1f4d3a,#2f6b52);
-  border-radius:6px;
-  box-shadow:0 14px 30px rgba(31,77,58,.35);
+  border-radius:10px;
+  box-shadow:0 18px 40px rgba(31,77,58,.35);
   overflow:hidden;
 }
 
@@ -120,28 +123,28 @@ body::before{
   content:"";
   position:absolute;
   top:0;
-  width:190px;
-  height:190px;
+  width:70%;
+  height:140%;
   border-top:2px solid rgba(247,226,123,.35);
   border-left:2px solid rgba(247,226,123,.35);
 }
 
 .envelope-verde::before{
-  left:-95px;
+  left:-35%;
   transform:rotate(45deg);
 }
 
 .envelope-verde::after{
-  right:-95px;
+  right:-35%;
   transform:rotate(45deg);
 }
 
 .linha-envelope{
   position:absolute;
-  top:-95px;
+  top:-55%;
   left:50%;
-  width:190px;
-  height:190px;
+  width:70%;
+  height:140%;
   border-right:2px solid rgba(247,226,123,.35);
   border-bottom:2px solid rgba(247,226,123,.35);
   transform:translateX(-50%) rotate(45deg);
@@ -150,31 +153,31 @@ body::before{
 .selo-verde{
   position:absolute;
   left:50%;
-  top:58px;
-  transform:translateX(-50%);
-  width:78px;
-  height:78px;
-  background:#ffffff;
-  border:3px solid var(--gold);
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:110px;
+  height:110px;
+  background:#fff;
+  border:4px solid #d4af37;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 5px 14px rgba(0,0,0,.28);
-  animation:pulsarSelo 1.8s infinite;
-  z-index:5;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+  z-index:10;
+  animation:pulsarSelo 2s infinite;
 }
 
 .selo-verde img{
-  width:68px;
-  height:68px;
+  width:90px;
+  height:90px;
   object-fit:contain;
   border-radius:50%;
 }
 
 .texto-abrir{
   font-family:'Alex Brush',cursive;
-  font-size:29px;
+  font-size:32px;
   color:var(--gold-dark);
   margin:12px 0 20px;
 }
@@ -201,8 +204,8 @@ body::before{
 }
 
 @keyframes pulsarSelo{
-  0%,100%{transform:translateX(-50%) scale(1)}
-  50%{transform:translateX(-50%) scale(1.08)}
+  0%,100%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-50%) scale(1.08)}
 }
 
 .hero{
@@ -390,13 +393,36 @@ footer .assinatura{
 }
 
 @media(max-width:600px){
+  .tela-convite{
+    width:95%;
+    min-height:620px;
+    padding:30px 15px;
+  }
+
+  .envelope-verde{
+    width:90%;
+    height:220px;
+  }
+
+  .selo-verde{
+    width:90px;
+    height:90px;
+  }
+
+  .selo-verde img{
+    width:72px;
+    height:72px;
+  }
+
+  .nome-convite{
+    font-size:44px;
+  }
+
   .card{padding:24px 18px}
   .logos{gap:18px}
   .logo1{width:145px}
   .logo2{width:245px}
   .nomes{font-size:clamp(36px, 11vw, 46px)}
-  .envelope-verde{width:245px;height:155px}
-  .nome-convite{font-size:46px}
 }
 </style>
 </head>
