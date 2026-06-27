@@ -536,65 +536,126 @@ footer .assinatura{
 
   <div class="box">
 
-    <p style="font-size:16px;line-height:1.8;">
+    <p style="font-size:16px; line-height:1.8;">
       Sua presença é o nosso maior presente e fará nosso dia ainda mais especial.
-      Mas, se desejar nos presentear, disponibilizamos nossas listas de presentes
-      e também a opção de contribuição via PIX.
+      Mas, se desejar nos presentear, escolha uma das opções abaixo.
     </p>
 
-    <br>
+    <div style="margin-top:30px; display:flex; flex-direction:column; gap:15px;">
 
-    <a class="btn"
-       target="_blank"
-       href="https://lista.havan.com.br/Convidado/ItensListaPresente/939749">
+      <button class="btn" onclick="mostrarPresente('havan')">
         Lista de Presentes Havan
-    </a>
+      </button>
 
-    <a class="btn"
-       target="_blank"
-       href="https://www.bemol.com.br/lp/ana&edvaldo">
+      <button class="btn" onclick="mostrarPresente('bemol')">
         Lista de Presentes Bemol
-    </a>
+      </button>
 
-    <hr style="
-      margin:30px 0;
-      border:none;
-      border-top:1px solid rgba(212,175,55,.5);
-    ">
+      <button class="btn" onclick="mostrarPresente('presente')">
+        Presente
+      </button>
 
-    <h3 style="
-      color:#8c6b1f;
-      font-family:'Cinzel',serif;
-      margin-bottom:15px;
-    ">
-       Presente via PIX
-    </h3>
+    </div>
 
-    <p>
-      Caso prefira, você também pode nos presentear através do PIX:
-    </p>
+    <!-- HAVAN -->
+    <div id="havan" class="conteudo-presente" style="display:none; margin-top:35px;">
 
-    <p style="
-      font-size:28px;
-      color:#d4af37;
-      font-weight:bold;
-      margin:20px 0;
-      word-break:break-all;
-    ">
-      51053942249
-    </p>
+      <h3 style="color:#8c6b1f; font-family:'Cinzel', serif;">
+        Lista de Presentes Havan
+      </h3>
 
-    <p>
-      <strong>Titular:</strong><br>
-      Edvaldo Cavalcante da Silva
-    </p>
+      <p>
+        Escolha um presente em nossa lista da Havan.
+      </p>
 
-    <button class="btn" onclick="copiarPix()">
-       Copiar Chave PIX
-    </button>
+      <a class="btn"
+         href="https://lista.havan.com.br/Convidado/ItensListaPresente/939749"
+         target="_blank">
+         Abrir Lista Havan
+      </a>
+
+    </div>
+
+    <!-- BEMOL -->
+    <div id="bemol" class="conteudo-presente" style="display:none; margin-top:35px;">
+
+      <h3 style="color:#8c6b1f; font-family:'Cinzel', serif;">
+        Lista de Presentes Bemol
+      </h3>
+
+      <p>
+        Escolha um presente em nossa lista da Bemol.
+      </p>
+
+      <a class="btn"
+         href="https://www.bemol.com.br/lp/ana&edvaldo"
+         target="_blank">
+         Abrir Lista Bemol
+      </a>
+
+    </div>
+
+    <!-- PRESENTE -->
+    <div id="presente" class="conteudo-presente" style="display:none; margin-top:35px;">
+
+      <h3 style="color:#8c6b1f; font-family:'Cinzel', serif;">
+        Presente
+      </h3>
+
+      <p>
+        Caso prefira, você também pode nos presentear utilizando a chave abaixo:
+      </p>
+
+      <p style="
+          font-size:28px;
+          color:#d4af37;
+          font-weight:bold;
+          margin:20px 0;
+          word-break:break-all;">
+        51053942249
+      </p>
+
+      <p>
+        <strong>Titular:</strong><br>
+        Edvaldo Cavalcante da Silva
+      </p>
+
+      <button class="btn" onclick="copiarPix()">
+        Copiar Chave
+      </button>
+
+    </div>
 
   </div>
 </section>
+
+<script>
+function mostrarPresente(id) {
+
+    // Esconde todas as opções
+    var secoes = document.querySelectorAll('.conteudo-presente');
+    secoes.forEach(function(secao){
+        secao.style.display = 'none';
+    });
+
+    // Exibe a selecionada
+    document.getElementById(id).style.display = 'block';
+
+    // Rolagem suave
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+function copiarPix() {
+
+    navigator.clipboard.writeText("51053942249");
+
+    alert("Chave copiada com sucesso!");
+
+}
+</script>
 
 <section id="presenca">
   <h2 class="titulo">Confirmação de Presença</h2>
